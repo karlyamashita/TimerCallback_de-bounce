@@ -33,12 +33,12 @@ void Example(void)
 
 	timerCallbackInit.callback2 = SetRedLED;
 	timerCallbackInit.timerCallback2Enabled = true;
-	TimerCallbackRegisterStruct(&timerCallbackInit);
+	TimerCallbackRegisterStruct(&timerCallback, &timerCallbackInit);
 #endif
 
 #ifdef EXAMPLE_3
 	// this will toggle the blue led at a rate of 333ms between each callback for 5 seconds
-	TimerCallbackShutDownStart(&timerCallback, BlinkBlueLED, 333, 3100);
+	TimerCallbackTimeoutStart(&timerCallback, BlinkBlueLED, 333, 3100);
 #endif
 
 
